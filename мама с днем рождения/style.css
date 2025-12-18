@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://static.vecteezy.com/system/resources/previews/007/624/761/original/pink-hearts-background-pink-background-with-heart-for-symbols-of-love-for-happy-women-s-mother-s-valentine-s-day-birthday-greeting-card-design-vector.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Падающие сердечки */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart-fall {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(255, 105, 180, 0.8);
+    animation: fall linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 50px 0 30px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #e91e63;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+.big-heart {
+    font-size: 5rem;
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.greeting, .poem {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 25px;
+    padding: 35px;
+    margin: 30px 0;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+    font-size: 1.4rem;
+    backdrop-filter: blur(5px);
+}
+
+.poem h2 {
+    color: #e91e63;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.poem p {
+    margin: 15px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.spacer {
+    text-align: center;
+    padding: 80px 0;
+    font-size: 1.6rem;
+    color: #e91e63;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+}
+
+.surprise {
+    text-align: center;
+    padding: 50px 0 100px;
+}
+
+#surpriseBtn {
+    background: linear-gradient(45deg, #ff4081, #f50057);
+    color: white;
+    border: none;
+    padding: 25px 50px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: 60px;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(245, 0, 87, 0.5);
+    transition: all 0.4s ease;
+    animation: bounce 2s infinite;
+}
+
+#surpriseBtn:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(245, 0, 87, 0.6);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .big-heart { font-size: 4rem; }
+    .greeting, .poem { padding: 25px; font-size: 1.3rem; }
+    .poem h2 { font-size: 1.9rem; }
+    #surpriseBtn { padding: 20px 40px; font-size: 1.5rem; }
+    .spacer { padding: 60px 0; font-size: 1.4rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.2rem; }
+    .greeting, .poem { padding: 20px; font-size: 1.2rem; }
+    #surpriseBtn { padding: 18px 35px; font-size: 1.4rem; }
+}
+/* ... остальной код без изменений ... */
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.heart-fall {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Ускорили падение: от 6 до 10 секунд + разные задержки */
+.heart-fall:nth-child(1) { left: 8%; animation-duration: 7s; animation-delay: 0s; }
+.heart-fall:nth-child(2) { left: 22%; animation-duration: 8s; animation-delay: 1s; }
+.heart-fall:nth-child(3) { left: 35%; animation-duration: 6.5s; animation-delay: 2.5s; }
+.heart-fall:nth-child(4) { left: 48%; animation-duration: 9s; animation-delay: 0.5s; }
+.heart-fall:nth-child(5) { left: 62%; animation-duration: 7.5s; animation-delay: 3s; }
+.heart-fall:nth-child(6) { left: 75%; animation-duration: 8.5s; animation-delay: 1.5s; }
+.heart-fall:nth-child(7) { left: 88%; animation-duration: 6s; animation-delay: 4s; }
+.heart-fall:nth-child(8) { left: 15%; animation-duration: 9.5s; animation-delay: 2s; }
+.heart-fall:nth-child(9) { left: 55%; animation-duration: 7s; animation-delay: 0s; }
+.heart-fall:nth-child(10) { left: 70%; animation-duration: 8s; animation-delay: 3.5s; }
+
+/* ... остальной код без изменений ... */
